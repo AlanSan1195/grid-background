@@ -32,7 +32,7 @@ const retos: Reto[] = [
   { id: 21, titulo: "Reto21", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
   { id: 20, titulo: "Reto20", dificultad: "medio", colSpan: 1, rowSpan: 1 },
   { id: 21, titulo: "Reto21", dificultad: "medio", colSpan: 1, rowSpan: 2 },
-  { id: 22, titulo: "Reto22", dificultad: "medio", colSpan: 2, rowSpan: 3},
+  { id: 22, titulo: "Reto22", dificultad: "medio", colSpan: 2, rowSpan: 3 },
   { id: 23, titulo: "Reto23", dificultad: "medio", colSpan: 2, rowSpan: 2 },
   { id: 24, titulo: "Reto24", dificultad: "medio", colSpan: 2, rowSpan: 2 },
   { id: 25, titulo: "Reto25", dificultad: "medio", colSpan: 2, rowSpan: 2 },
@@ -51,21 +51,23 @@ const retos: Reto[] = [
   >
     {
       retos.map((reto) => (
-        <div
-          id={`reto-${reto.id}`}
-          class={`text-white p-4 text-left rounded-xl border border-white/10
+        <a href={`/reto-${reto.id}`}  id={`reto-${reto.id}`}
+            class={`text-white p-4 text-left rounded-xl border border-white/10
           col-span-${reto.colSpan} 
           row-span-${reto.rowSpan}
-           hover:scale-105 transition`}
-        >
-          <span class="text-sm uppercase font-semibold tracking-wide">
-            {reto.dificultad}
-          </span>
-          <h2 class="text-2xl font-bold mt-2">{reto.titulo}</h2>
-          <span class="text-4xl font-black opacity-30 absolute bottom-2 right-4">
-            {reto.id}
-          </span>
-        </div>
+            hover:cursor-pointer`}>
+          <div class="hover:scale-105 transition  bg-black/10 h-full rounded-md p-2 hover_traslate-y-2 hover:rotate-1"
+            
+          >
+            <span class="text-sm uppercase font-semibold tracking-wide">
+              {reto.dificultad}
+            </span>
+            <h2 class="text-2xl font-bold mt-2">{reto.titulo}</h2>
+            <span class="text-4xl font-black opacity-30 absolute bottom-2 right-4">
+              {reto.id}
+            </span>
+          </div>
+        </a>
       ))
     }
   </div>
