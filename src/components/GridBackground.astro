@@ -1,0 +1,75 @@
+---
+type Reto = {
+  id: string;
+  titulo: string;
+  dificultad: string;
+  columnaStart: number;
+  columnaEnd: number;
+  filaStart: number;
+  filaEnd: number;
+};
+const retos: Reto[] = [
+  { id: "1", titulo: "Contar hasta 100", dificultad: "medio", columnaStart: 1, columnaEnd: 1, filaStart: 1, filaEnd: 2 },
+  { id: "2", titulo: "Sumar números grandes", dificultad: "medio", columnaStart: 2, columnaEnd: 5, filaStart: 1, filaEnd: 1 },
+  { id: "3", titulo: "Resolver un laberinto", dificultad: "fácil", columnaStart: 3, columnaEnd: 4, filaStart: 1, filaEnd: 2 },
+  { id: "4", titulo: "Aprender una palabra nueva", dificultad: "fácil", columnaStart: 4, columnaEnd: 5, filaStart: 1, filaEnd: 2 },
+  { id: "5", titulo: "Memorizar 10 objetos", dificultad: "difícil", columnaStart: 5, columnaEnd: 6, filaStart: 1, filaEnd: 2 },
+  { id: "6", titulo: "Resolver un acertijo", dificultad: "fácil", columnaStart: 6, columnaEnd: 7, filaStart: 1, filaEnd: 2 },
+  { id: "7", titulo: "Leer un cuento corto", dificultad: "difícil", columnaStart: 7, columnaEnd: 8, filaStart: 1, filaEnd: 2 },
+  { id: "8", titulo: "Clasificar colores", dificultad: "medio", columnaStart: 1, columnaEnd: 2, filaStart: 2, filaEnd: 3 },
+  { id: "9", titulo: "Saltar la cuerda 20 veces", dificultad: "medio", columnaStart: 2, columnaEnd: 3, filaStart: 2, filaEnd: 3 },
+  { id: "10", titulo: "Decir el alfabeto al revés", dificultad: "fácil", columnaStart: 3, columnaEnd: 4, filaStart: 2, filaEnd: 3 },
+  { id: "11", titulo: "Hacer una torre con bloques", dificultad: "fácil", columnaStart: 4, columnaEnd: 5, filaStart: 2, filaEnd: 3 },
+  { id: "12", titulo: "Resolver una suma mental", dificultad: "medio", columnaStart: 5, columnaEnd: 6, filaStart: 2, filaEnd: 3 },
+  { id: "13", titulo: "Encontrar palabras escondidas", dificultad: "medio", columnaStart: 6, columnaEnd: 7, filaStart: 2, filaEnd: 3 },
+  { id: "14", titulo: "Doblar ropa", dificultad: "fácil", columnaStart: 7, columnaEnd: 8, filaStart: 2, filaEnd: 3 },
+  { id: "15", titulo: "Crear una historia corta", dificultad: "medio", columnaStart: 1, columnaEnd: 2, filaStart: 3, filaEnd: 4 },
+  { id: "16", titulo: "Resolver un rompecabezas", dificultad: "difícil", columnaStart: 2, columnaEnd: 3, filaStart: 3, filaEnd: 4 },
+  { id: "17", titulo: "Dibujar tu animal favorito", dificultad: "medio", columnaStart: 3, columnaEnd: 4, filaStart: 3, filaEnd: 4 },
+  { id: "18", titulo: "Decorar una figura", dificultad: "difícil", columnaStart: 4, columnaEnd: 5, filaStart: 3, filaEnd: 4 },
+  { id: "19", titulo: "Resolver un sudoku", dificultad: "difícil", columnaStart: 5, columnaEnd: 6, filaStart: 3, filaEnd: 4 },
+  { id: "20", titulo: "Escribir tu nombre 5 veces", dificultad: "fácil", columnaStart: 6, columnaEnd: 7, filaStart: 3, filaEnd: 4 },
+  { id: "21", titulo: "Clasificar figuras geométricas", dificultad: "medio", columnaStart: 7, columnaEnd: 8, filaStart: 3, filaEnd: 4 },
+  { id: "22", titulo: "Construir una figura con legos", dificultad: "medio", columnaStart: 1, columnaEnd: 2, filaStart: 4, filaEnd: 5 },
+  { id: "23", titulo: "Leer en voz alta", dificultad: "fácil", columnaStart: 2, columnaEnd: 3, filaStart: 4, filaEnd: 5 },
+  { id: "24", titulo: "Resolver una resta compleja", dificultad: "medio", columnaStart: 3, columnaEnd: 4, filaStart: 4, filaEnd: 5 },
+  { id: "25", titulo: "Descifrar un código secreto", dificultad: "difícil", columnaStart: 4, columnaEnd: 5, filaStart: 4, filaEnd: 5 },
+  { id: "26", titulo: "Buscar diferencias", dificultad: "medio", columnaStart: 5, columnaEnd: 6, filaStart: 4, filaEnd: 5 },
+  { id: "27", titulo: "Identificar sonidos", dificultad: "fácil", columnaStart: 6, columnaEnd: 7, filaStart: 4, filaEnd: 5 },
+  { id: "28", titulo: "Seguir un patrón", dificultad: "difícil", columnaStart: 7, columnaEnd: 8, filaStart: 4, filaEnd: 5 },
+  { id: "29", titulo: "Imitar una figura", dificultad: "difícil", columnaStart: 1, columnaEnd: 2, filaStart: 5, filaEnd: 6 },
+  { id: "30", titulo: "Adivinar un objeto", dificultad: "fácil", columnaStart: 2, columnaEnd: 3, filaStart: 5, filaEnd: 6 }
+];
+const getGridClass = (reto: Reto) =>
+  `col-span-1 row-span-1 p-2 border-white/20 border-[0.5px] bg-black
+   md:col-start-${reto.columnaStart} md:col-end-${reto.columnaEnd}
+   md:row-start-${reto.filaStart} md:row-end-${reto.filaEnd}`;
+
+---
+
+ 
+
+  <!-- mi contenedor sera grid y contendra 7 columnas  -->
+  <main class="flex justify-center items-center">
+    <div
+      class="grid grid-cols-10 grid-rows-8 h-auto md:grid-cols-7 border-[0.5px] border-white/20 bg-green-300 lg:w-[1120px]"
+    >
+      {retos.map((reto) => (
+        <div id={`elemento-${reto.id}`} class={getGridClass(reto)}>
+          <a
+            href={`#${reto.id}`}
+            class="rounded-xl overflow-hidden
+              bg-gradient-to-br from-cyan-900 via-cyan-700 to-cyan-500
+              flex flex-col items-start hover:contrast-125 transition group
+              p-7 h-full w-full hover:scale-110 hover:rotate-3"
+          >
+            
+            
+            <h1 class="text-3xl font-bold text-white">{reto.titulo}</h1>
+            <p class="text-white text-lg mt-2">🎮 {reto.dificultad}</p>
+            <p class="text-white font-bold text-4xl mt-2">{reto.id}</p>
+          </a>
+        </div>
+      ))}
+    </div>
+  </main>
