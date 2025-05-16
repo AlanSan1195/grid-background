@@ -1,64 +1,108 @@
 ---
-type Reto = {
-  id: number;
-  titulo: string;
-  dificultad: "fácil" | "medio" | "difícil";
-  colSpan: number;
-  rowSpan: number;
-};
-
-const retos: Reto[] = [
-  { id: 1, titulo: "Reto 1", dificultad: "fácil", colSpan: 1, rowSpan: 3 },
-  { id: 0, titulo: "Reto 0", dificultad: "fácil", colSpan: 2, rowSpan: 1 },
-
-  { id: 4, titulo: "Reto 4", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 5, titulo: "Reto 5", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 6, titulo: "Reto 6", dificultad: "medio", colSpan: 1, rowSpan: 3 },
-  { id: 7, titulo: "Reto 7", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 8, titulo: "Reto 6", dificultad: "fácil", colSpan: 1, rowSpan: 3 },
-  { id: 9, titulo: "Reto 9", dificultad: "fácil", colSpan: 1, rowSpan: 2 },
-  { id: 10, titulo: "Reto 10", dificultad: "fácil", colSpan: 2, rowSpan: 1 },
-  { id: 11, titulo: "Reto 11", dificultad: "fácil", colSpan: 1, rowSpan: 4 },
-  { id: 12, titulo: "Reto 12", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 13, titulo: "Reto 13", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 14, titulo: "Reto 14", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 15, titulo: "Reto 15", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 16, titulo: "Reto 16", dificultad: "fácil", colSpan: 1, rowSpan: 3 },
-
-  { id: 17, titulo: "Reto17", dificultad: "medio", colSpan: 2, rowSpan: 2 },
-  { id: 18, titulo: "Reto18", dificultad: "medio", colSpan: 1, rowSpan: 1 },
-  { id: 19, titulo: "Reto19", dificultad: "medio", colSpan: 1, rowSpan: 1 },
-  { id: 20, titulo: "Reto20", dificultad: "medio", colSpan: 1, rowSpan: 1 },
-  { id: 21, titulo: "Reto21", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 20, titulo: "Reto20", dificultad: "medio", colSpan: 1, rowSpan: 1 },
-  { id: 21, titulo: "Reto21", dificultad: "medio", colSpan: 1, rowSpan: 2 },
-  { id: 22, titulo: "Reto22", dificultad: "medio", colSpan: 2, rowSpan: 3 },
-  { id: 23, titulo: "Reto23", dificultad: "medio", colSpan: 2, rowSpan: 2 },
-  { id: 24, titulo: "Reto24", dificultad: "medio", colSpan: 2, rowSpan: 2 },
-  { id: 25, titulo: "Reto25", dificultad: "medio", colSpan: 2, rowSpan: 2 },
-  { id: 26, titulo: "Reto26", dificultad: "medio", colSpan: 3, rowSpan: 1 },
-  { id: 27, titulo: "Reto27", dificultad: "medio", colSpan: 2, rowSpan: 2 },
-  { id: 28, titulo: "Reto28", dificultad: "medio", colSpan: 1, rowSpan: 2 },
-  { id: 29, titulo: "Reto 29", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
-  { id: 30, titulo: "Reto 30", dificultad: "fácil", colSpan: 1, rowSpan: 1 },
+const projects = [
+  {
+    id: 1,
+    name: "Suitch",
+    technology: "React",
+    colSpan: 3,
+    rowSpan: 2,
+  },
+  {
+    id: 2,
+    name: "Mario Bros",
+    technology: "Angular",
+    colSpan: 2,
+    rowSpan: 1,
+  },
+  {
+    id: 3,
+    name: "Moto Scroll",
+    technology: "Vue",
+    colSpan: 2,
+    rowSpan: 2,
+  },
+  {
+    id: 4,
+    name: "",
+    technology: "Svelte",
+    colSpan: 2,
+    rowSpan: 1,
+  },
+  {
+    id: 5,
+    name: "Ember",
+    technology: "Ember",
+    colSpan: 2,
+    rowSpan: 2,
+  },
 ];
+
 ---
-<!-- [mask-image:radial-gradient(circle_at_center,white_70%,transparent_90%)] -->
-
-<!-- 1. background con grid dibujado  -->
-<main class=" grid   w-full   bg-black/10 [background-image:linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] [grid-template-columns:repeat(15,1fr)] [background-size:115px_115px]   ">
-
-  <!-- contenedor de retos  -->
-  <div id="border" class=" border border-red-600/40 grid grid-cols-7 grid-rows-7 col-start-5 col-end-12   p-2">
-    {
-      retos.map((reto) => (
-        <div
-          id={"reto" + reto.id}
-          class={`bg-yellow-400/30 col-span-${reto.colSpan} row-span-${reto.rowSpan} gap-2 p-2 border border-white/30 min-w-[113px] min-h-[113px]`}
-        >
-          <a href="#" class="text-white p-2">{reto.titulo}</a>
-        </div>
-      )) 
-    }
+ <!-- background from https://bg.ibelick.com/ thanks for you pryect is inspration for mi fisrt proyect en the hackaton  -->
+<div
+  class="absolute  box-border inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"
+>
+  <div
+    class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_700px_at_80%_300px,#4286ce,transparent)]"
+  >
   </div>
-</main>
+
+  <!-- modifica la cantidad de columnas que nececites  -->
+  <section class="relative border border-red-600/40 h-auto w-full grid grid-cols-5 grid-rows-5 p-1 lg:grid-cols-7 ">
+
+    <!-- primer proyecto -->
+     <!-- usa col-span y/o row-span para dictar: de donde a donde se posisionara tu primer proyecto basando en las columnas que dictaste en <section>  -->
+        <div
+          class={`  p-1  col-span-3 row-span-2 lg:col-span-3 lg:row-span-2 `}
+        >
+          <a href="#" class="text-balck  bg-black/20  ">
+            <div class=" backdrop-blur bg-white/10   h-full w-full p-7  overflow-hidden rounded-2xl border-[1px] border-black/20  ">
+              <p>Mi proyecto</p>
+              <p>react</p>
+              <p>1</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- segunto pryecto  -->
+        <div
+        class={`p-1    col-span-2 row-span-1 lg:col-span-2 lg:row-span-3`}
+      >
+        <a href="#" class="text-black bg-black/20 ">
+          <div class=" backdrop-blur bg-white/10   h-full w-full p-7  overflow-hidden rounded-2xl border-[1px] border-black/20   ">
+            <p>Mi proyecto</p>
+            <p>Html</p>
+            <p>2</p>
+          </div>
+        </a>
+      </div>
+
+       <!-- tercer pryecto  -->
+       <div
+       class={`p-1    col-span-2 row-span-1 lg:col-span-2 lg:row-span-3`}
+     >
+       <a href="#" class="text-black bg-black/20 ">
+         <div class=" backdrop-blur bg-white/10   h-full w-full p-7  overflow-hidden rounded-2xl border-[1px] border-black/20 ">
+           <p>Mi proyecto</p>
+           <p>Atro</p>
+           <p>3</p>
+         </div>
+       </a>
+     </div>
+
+        <!-- cuarto pryecto  -->
+        <div
+        class={`p-1    col-span-5 row-span-1 lg:col-span-3 lg:row-span-1`}
+      >
+        <a href="#" class="text-black bg-black/20 ">
+          <div class="backdrop-blur bg-white/10   h-full w-full p-7  overflow-hidden rounded-2xl border-[1px] border-black/20 ">
+            <p>Mi proyecto</p>
+            <p>python</p>
+            <p>4</p>
+          </div>
+        </a>
+      </div>
+  </section>
+</div>
+
+<!-- border border-red-600/40 grid grid-cols-2 grid-rows-10 w-full md:grid-cols-3 md:grid-rows-10 xl:grid-cols-7 xl:grid-rows-7 lg:col-start-5 lg:col-end-12  -->
